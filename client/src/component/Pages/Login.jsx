@@ -45,7 +45,7 @@ export default class Login extends Component {
     }
     const { email, password } = this.state
     if (email === "fajarnh67@gmail.com" && password === "asd") {
-      localStorage.setItem("token", "aasdhjgaidfgaiofgqe")
+      localStorage.setItem("token", " ")
       this.setState({
         loggedIn: true
       })
