@@ -177,7 +177,7 @@ module.exports = {
 
                 } else {
                     con.rollback()
-                    return res.json({error: true, message: "stok atau kd_barang is not found", code: 404});
+                    return res.json({error: true, message: "stok atau kd_barang tidak ada!", code: 404});
                 }
             })
             })

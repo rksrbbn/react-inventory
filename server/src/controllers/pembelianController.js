@@ -19,7 +19,7 @@ module.exports = {
 	getById: (req, res) => {
 		Pembelian.getById(req.con, req.params.kd_pembelian, (err, rows) => {
 			if(err) throw err
-			res.json(rows)
+			rows.length == 0 ? res.send('kd_pembelian tidak ditemukan.', 404) : res.json({ data: rows })
 		})
 	},
 
@@ -39,9 +39,9 @@ module.exports = {
     },
 
 	getDetailById: (req, res) => {
-		Pembelian.getDetailById(req.con, req.params.kd_pembelian, (err, rows) => {
+		Pembelian.getDetailById(req.con, req.params.id_pembelian, (err, rows) => {
 			if(err) throw err
-			res.json(rows)
+			rows.length == 0 ? res.send('kd_pembelian tidak ditemukan.', 404) : res.json({ data: rows })
 		})
 	},
 
