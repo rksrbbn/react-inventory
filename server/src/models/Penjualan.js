@@ -14,8 +14,8 @@ module.exports = {
 
     },
 
-    getById: (con, id_penjualan, callback) => {
-        const query = `SELECT * FROM t_penjualan WHERE id_penjualan = '${id_penjualan}'`
+    getById: (con, kd_penjualan, callback) => {
+        const query = `SELECT * FROM penjualan WHERE kd_penjualan = '${kd_penjualan}'`
 		con.query(query, callback)
     },
 
@@ -31,8 +31,8 @@ module.exports = {
         con.query(`SELECT * FROM d_penjualan WHERE id_penjualan LIKE '%${search}%' OR kd_penjualan LIKE '%${search}%' OR kd_barang LIKE '%${search}%' OR jumlah LIKE '%${search}%' OR subtotal LIKE '%${search}%' ORDER BY ${orderBy} ${sort}`, callback)
     },
 
-    getDetailById: (con, id_pembelian, callback) => {
-		con.query(`SELECT * FROM d_pembelian WHERE id_pembelian = ${id_pembelian}`, callback)
+    getDetailById: (con, id_penjualan, callback) => {
+		con.query(`SELECT * FROM d_penjualan WHERE id_penjualan = ${id_penjualan}`, callback)
     },
 
     getLaporan: (con, data, callback) => {
